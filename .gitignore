@@ -1,0 +1,4 @@
+# created by virtualenv automatically
+news_articles/
+*.pyc
+instance/
