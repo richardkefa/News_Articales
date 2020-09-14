@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import News,
+from .models import News,Sources
 #getting api key
 api_key = None
 
@@ -40,15 +40,14 @@ def process_results(news_list):
   for news_item in news_list:
     id = news_item.get('id')
     name = news_item.get('name')
-    author = news_item.get('author')
-    title = news_item.get('title')
-    image = news_item.get('urlToImage')
-    publishedate = news_item.get('publishedAt')
-    content = news_item.get('content')
-    fullarticle = news_item.get('url')
+    description = news_item.get('description')
+    url = news_item.get('url')
+    category = news_item.get('category')
+    language = news_item.get('language')
+
     
-    if content:
-      news_object = News(id,name,author,title,image,publishedate,content,fullarticle)
+    if id:
+      news_object = Sources(id,name,description,url,category,language)
       news_results.append(news_object)
     print(news_item)
 

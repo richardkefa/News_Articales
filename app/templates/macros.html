@@ -3,12 +3,12 @@
   {% for news in news_list %}
   <div class="row">
     <div class="col-md-6 text-center">
-      <a href="/news/{{news.name}}">{{news.title}}</a><br>
+      <a href="/news/{{news.name}}">{{news.name}}</a><br>
       <img src="{{news.image}}" alt="{{news.name}} image" class="img-responsive" width="60%" height="80%">
     </div>
     <div class="col-md-6">
       <li>
-        {{news.content}}
+        {{news.description}}
       </li>
     </div>
   </div>
