@@ -11,5 +11,6 @@ def index():
   business_news = get_news('business')
   politics_news = get_news('politics')
   sports_news = get_news('sports')
+  # print(business_news)
   
   return render_template('index.html',business = business_news,politics = politics_news,sports = sports_news)

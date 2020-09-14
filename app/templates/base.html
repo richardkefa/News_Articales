@@ -23,10 +23,7 @@
 </head>
 <body>
   <div class="container-fluid">
-    {% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
-    {% endblock %}
+
     <!-- Navbar block  --> 
     {% block navbar %}
     {% include 'navbar.html' %}

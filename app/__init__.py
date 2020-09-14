@@ -9,7 +9,7 @@ def creat_app(config_name):
   app.config.from_object(config_options[config_name])
   
   #registering the blue print
-  from.main import main as main_blueprint
+  from .main import main as main_blueprint
   app.register_blueprint(main_blueprint)
   
   #setting  config
