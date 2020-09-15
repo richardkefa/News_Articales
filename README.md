@@ -6,7 +6,8 @@
 ## Description 
 News articles is a python application build on flask and jinja templetes that allows a user to access news from 
 different sources and different countries.
-They can also view all the articles of a certain source
+They can also view all the articles of a certain source.
+https://news-articles101.herokuapp.com/
 
 ## User instructions 
 * Access the link to the site
