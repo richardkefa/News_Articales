@@ -1,7 +1,6 @@
 {% macro displaynewslist(news_list) %}
 
   {% for news in news_list %}
-  <div class="row">
     <div class="col-md-12">
       <!-- Card -->
       <div class="card">
@@ -18,10 +17,9 @@
         
         </div>
       
-      </div>
+      </div><br>
 <!-- Card -->
     </div>
-  </div>
   {% endfor %}
 {% endmacro %}
 

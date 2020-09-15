@@ -2,10 +2,6 @@
 {% import 'macros.html' as macro %}
 {% block content %}
 <div class="row" style="padding-top: 60px;">
-  <div class="col-md-12">
-    <div>
-        {{macro.displaynewslist(source)}}
-    </div>
-  </div>
+  {{macro.displaynewslist(source)}}
 </div>
 {% endblock%}
