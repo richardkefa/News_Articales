@@ -14,7 +14,7 @@
           <!-- Text -->
           <p class="card-text">{{news.description}}</p>
           <!-- Button -->
-          <a href="{{news.url}}" class="btn btn-primary">Read more</a>
+          <a href="/article/{{news.id}}" class="btn btn-primary">Read more</a>
         
         </div>
       
@@ -26,3 +26,45 @@
 {% endmacro %}
 
 
+{% macro displayarticleslist(article_list) %}
+
+{% for article in article_list %}
+  <div class="col-md-3" >
+    <!-- Card -->
+<div class="card" style="height: 80vh; padding: 20px;">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Button -->
+  <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3" href="{{article.fullarticle}}"><i
+      class="fas fa-chevron-right pl-1"></i></a>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title " style="font-size: large;">{{article.title|truncate(50)}}</h4>
+    <hr>
+    <!-- Text -->
+   
+
+  </div>
+
+  <!-- Card footer -->
+  <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+    <ul class="list-unstyled list-inline font-small">
+    <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>{{article.publishedate}}</li>
+    </ul>
+  </div>
+
+</div><br>
+<!-- Card -->
+  </div>
+{% endfor %}
+{% endmacro %}

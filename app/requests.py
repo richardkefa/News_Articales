@@ -50,29 +50,40 @@ def process_results(news_list):
     if id:
       news_object = Sources(id,name,description,url,category,language)
       news_results.append(news_object)
-    print(news_item)
-
+      
   return news_results
 
 def get_articles(id):
   get_source_articles_url = article_url.format(id,api_key)
   with urllib.request.urlopen(get_source_articles_url) as url:
-      articles_details_data = url.read()
-      article_details_response = json.loads(articles_details_data)
+    articles_details_data = url.read()
+    article_details_response = json.loads(articles_details_data)
+    article_results = None
+    if article_details_response['articles']:
       article_result_list =  article_details_response['articles']
-      article_object = []
-      for article in article_details_response
-        if article_details_response:
-            id = article_details_response.get('id')
-            author = article_details_response.get('author')
-            title = article_details_response.get('title')
-            description = article_details_response('description')
-            fullarticle = article_details_response.get('url')
-            image = article_details_response.get('urlToImage')
-            publisheddate = movie_details_response.get('publishedAt')
-            
-            article_object = Articles(id,author,title,image,publisheddate,fullarticle,description)
-          
-  return article_object 
+      article_results = process_article_results(article_result_list)
+    # import pdb; pdb.set_trace()
+
+  return article_results
+
+def process_article_results(article_list):
+  article_results = []
+  for article in article_list:
+    id = article.get('id')
+    author = article.get('author')
+    title = article.get('title')
+    description = article.get('description')
+    fullarticle = article.get('url')
+    image = article.get('urlToImage')
+    publisheddate = article.get('publishedAt')
+    
+    if image:
+      article_object = Articles(id,author,title,image,publisheddate,fullarticle,description)
+      article_results.append(article_object)
+      print(fullarticle)     
+  return article_results 
+
+
+     
     
   

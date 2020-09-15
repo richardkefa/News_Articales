@@ -15,12 +15,12 @@ def index():
   # print(business_news)
   
   return render_template('index.html',source = source_news)
-@main.route('/article/<str:id>')
+@main.route('/article/<string:id>')
 def aricles(id):
   '''
   view article page for a source
   '''
-  aricles = get_articles(id)
-  title = f'{articles.title}'
+  articles = get_articles(id)
+  # title = f'{articles.title}'
   
-  return render_template('articles.html',title = title,articles = articles)
+  return render_template('articles.html',articles = articles)

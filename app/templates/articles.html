@@ -1,1 +1,8 @@
 {% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block content %}
+<div class="row" style="padding-top: 60px;">
+  {{ macro.displayarticleslist(articles) }}
+</div>
+{% endblock %}
