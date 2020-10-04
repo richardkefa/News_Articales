@@ -2,3 +2,4 @@
 news_articles/
 *.pyc
 instance/
+start.sh
